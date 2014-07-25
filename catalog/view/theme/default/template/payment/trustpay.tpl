@@ -7,7 +7,7 @@
   <input type="hidden" name="fail" value="<?php echo $fail; ?>" />
   <input type="hidden" name="success" value="<?php echo $success; ?>" />
   <input type="hidden" name="message" value="Opencart checkout transaction." />
-  <input type="hidden" name="istest" value="true" />  
+  <input type="hidden" name="istest" value="false" />
   <div class="buttons">
     <div class="pull-right">
       <input type="submit" value="<?php echo $button_confirm; ?>" class="btn btn-primary" />
