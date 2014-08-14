@@ -25,4 +25,3 @@ $_['help_shared_secret'] = 'The shared secret for your specific store entered on
 // Error
 $_['error_permission']   = 'Warning: You do not have permission to modify payment TrustPay!';
 ?>
-
