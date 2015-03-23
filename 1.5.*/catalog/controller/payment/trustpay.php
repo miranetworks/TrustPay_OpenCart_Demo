@@ -1,4 +1,4 @@
-<?php:
+<?php
 include_once ('/var/www/oauth/library/OAuthRequest.php');
 class ControllerPaymenttrustpay extends Controller {
 	public function index() {
@@ -11,11 +11,12 @@ class ControllerPaymenttrustpay extends Controller {
 		$this->data['action'] = 'https://my.trustpay.biz/TrustPayWebClient/Transact';
 		$this->data['vendor_id'] = $this->config->get('trustpay_vendor_id');
 		$this->data['currency'] = $order_info['currency_code'];
+		$this->data['countrycode']=$order_info['payment_iso_code_2'];
 		$this->data['amount'] = $this->currency->format($order_info['total'], $order_info['currency_code'],'', false);
 		$this->data['txid'] = $this->session->data['order_id'];
 		$this->data['appuser'] = $order_info['payment_firstname'] . ' ' . $order_info['payment_lastname'];
-		$this->data['fail'] = $this->url->link('checkout/failure');
-		$this->data['success'] = $this->url->link('payment/trustpay/waiting');
+		$this->data['success'] = $this->url->link('payment/trustpay/waiting&transaction_id='.$this->session->data['order_id']);
+                $this->data['fail'] = $this->url->link('payment/trustpay/waiting&transaction_id='.$this->session->data['order_id']);
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/payment/trustpay.tpl')) {
                         $this->template = $this->config->get('config_template') . '/template/payment/trustpay.tpl';
@@ -26,8 +27,8 @@ class ControllerPaymenttrustpay extends Controller {
                 $this->render();
 	}
 	public function waiting(){
-		$this->session->data['waiting']='waiting';
-		$this->response->redirect($this->url->link('checkout/waiting'));
+		 $this->response->redirect($this->url->link('checkout/waiting&transaction_id='.$this->request->get['transaction_id']));
+
 	}
 	public function notification(){
 	

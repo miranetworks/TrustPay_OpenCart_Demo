@@ -2,6 +2,7 @@
   <input type="hidden" name="vendor_id" value="<?php echo $vendor_id; ?>" />
   <input type="hidden" name="appuser" value="<?php echo $appuser; ?>" />
   <input type="hidden" name="currency" value="<?php echo $currency; ?>" />
+  <input type="hidden" name="countrycode" value="<?php echo $countrycode; ?>" />
   <input type="hidden" name="amount" value="<?php echo $amount; ?>" />
   <input type="hidden" name="txid" value="<?php echo $txid; ?>" />
   <input type="hidden" name="fail" value="<?php echo $fail; ?>" />

@@ -34,7 +34,6 @@ class ControllerCheckoutWaiting extends Controller {
 		$this->data['button_continue'] = $this->language->get('button_continue');
 		$this->data['continue'] = $this->url->link('common/home');
 		$this->data['order'] = $this->session->data['order_id'];
-		error_log('Waiting:'.$this->session->data['waiting']);
 		$order_id=$this->session->data['order_id'];
 		error_log('Order_id:'.$order_id);
 		$this->load->model('checkout/order');

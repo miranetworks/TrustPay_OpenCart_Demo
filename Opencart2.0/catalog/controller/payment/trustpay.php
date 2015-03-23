@@ -1,4 +1,4 @@
-<?php:
+<?php
 include_once ('/var/www/oauth/library/OAuthRequest.php');
 class ControllerPaymenttrustpay extends Controller {
 	public function index() {
