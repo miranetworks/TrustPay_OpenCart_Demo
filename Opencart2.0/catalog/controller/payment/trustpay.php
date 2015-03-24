@@ -52,6 +52,7 @@ class ControllerPaymenttrustpay extends Controller {
 	$params=$params.'&consumermessage='.$consmsg;
 	$params=$params.'&currency='.$curr;
 	$params=$params.'&description='.$desc;
+	$params=$params.'&istest=false';
 	$params=$params.'&method='.$method;
 	$params=$params.'&status='.$status;
 	$params=$params.'&tp_transaction_id='.$tptxid;
