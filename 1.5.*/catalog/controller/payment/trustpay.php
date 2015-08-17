@@ -1,5 +1,5 @@
 <?php
-include_once ('/var/www/oauth/library/OAuthRequest.php');
+include_once ('./oauth/library/OAuthRequest.php');
 class ControllerPaymenttrustpay extends Controller {
         public function index() {
         $this->data['button_confirm'] = $this->language->get('button_confirm');
