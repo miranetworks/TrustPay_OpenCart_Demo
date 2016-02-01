@@ -26,7 +26,7 @@ class ControllerCheckoutWaiting extends Controller {
 					
       	$this->data['breadcrumbs'][] = array(
         	'text' => $this->language->get('text_failure'),
-			'href' => $this->url->link('checkout/failure')
+			'href' => $this->url->link('checkout/fail')
       	);
 
 		$this->data['heading_title'] = $this->language->get('heading_title');
@@ -42,7 +42,7 @@ class ControllerCheckoutWaiting extends Controller {
 		if ($order_info['order_status_id']==$this->config->get('trustpay_order_status_id')) {
 			$this->response->redirect($this->url->link('checkout/success'));
 		} else if ($order_info['order_status_id']==10) {
-			$this->response->redirect($this->url->link('checkout/failure'));
+			$this->response->redirect($this->url->link('checkout/fail'));
 		} else {
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/waiting.tpl')) {
                         $this->template = $this->config->get('config_template') . '/template/common/waiting.tpl';

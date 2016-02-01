@@ -19,7 +19,7 @@ var doStuff = function loadXMLDoc() {
                         document.location = "index.php?route=checkout/success";
                 } else if(xmlhttp.responseText=='10'){
                         clearTimeout(timeOutId);
-                        document.location = "index.php?route=checkout/failure";
+                        document.location = "index.php?route=checkout/fail";
                 } else {
                         timeOutId =setTimeout(doStuff, 1000);
                 }
